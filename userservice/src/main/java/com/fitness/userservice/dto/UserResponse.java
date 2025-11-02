@@ -5,18 +5,15 @@ import lombok.*;
 import java.sql.Timestamp;
 import java.util.UUID;
 
-
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class UserResponse {
-    private UUID id;
+    private String id;
 
     private String email;
-
-    private String password;
 
     private String firstname;
 

@@ -9,7 +9,7 @@ public class UserMapper {
         return UserResponse.builder()
                 .id(user.getId())
                 .email(user.getEmail())
-                .password(user.getPassword())
+//                .password(user.getPassword())
                 .firstname(user.getFirstname())
                 .lastname(user.getLastname())
                 .createdAt(user.getCreatedAt())

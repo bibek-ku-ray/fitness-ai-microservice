@@ -11,14 +11,17 @@ import lombok.*;
 @NoArgsConstructor
 @Builder
 public class RegisterRequest {
+
     @NotBlank(message = "Email is required")
     @Email(message = "Email format should be valid")
     private String email;
 
-    @Size(min = 6)
+    @Size(min = 6, max = 20, message = "Password must be between 6 to 20 character")
     private String password;
 
+    @NotBlank(message = "First name is required")
     private String firstname;
 
+    @NotBlank(message = "Last name is required")
     private String lastname;
 }
