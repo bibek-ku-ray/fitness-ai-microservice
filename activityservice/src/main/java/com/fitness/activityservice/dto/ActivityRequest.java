@@ -1,0 +1,22 @@
+package com.fitness.activityservice.dto;
+
+import com.fitness.activityservice.model.ActivityType;
+import lombok.*;
+
+import java.time.LocalDateTime;
+import java.util.Map;
+
+@Getter
+@Setter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class ActivityRequest {
+    private String userId;
+    private ActivityType type;
+    private Integer duration;
+    private Integer caloriesBurned;
+    private LocalDateTime startTime;
+    private Map<String, Object> additionalMetrics;
+}
+
