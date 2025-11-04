@@ -5,6 +5,10 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/fitness-micro-activity
       database: fitness-micro-activity
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 
 server:
   port: 8082
