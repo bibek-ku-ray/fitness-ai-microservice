@@ -6,6 +6,7 @@ import com.fitness.activityservice.dto.ActivityResponse;
 import com.fitness.activityservice.model.Activity;
 import com.fitness.activityservice.repository.ActivityRepository;
 import com.fitness.activityservice.service.ActivityService;
+import com.fitness.activityservice.service.UserValidationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +15,16 @@ import org.springframework.stereotype.Service;
 public class ActivityServiceImpl implements ActivityService {
 
     private final ActivityRepository activityRepository;
+    private final UserValidationService userValidationService;
 
     @Override
     public ActivityResponse trackActivity(ActivityRequest request) {
+
+        boolean isValidUser = userValidationService.validateUser(request.getUserId());
+
+        if (!isValidUser)
+            throw new IllegalArgumentException("Invalid userid: "+ request.getUserId());
+
         Activity activity = Activity.builder()
                 .userId(request.getUserId())
                 .type(request.getType())

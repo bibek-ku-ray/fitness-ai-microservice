@@ -42,4 +42,9 @@ public class UserServiceImpl implements UserService {
         return Optional.ofNullable(UserMapper.toDto(response));
     }
 
+    @Override
+    public Boolean exitsByUserId(String userId) {
+        return userRepository.existsById(userId);
+    }
+
 }
