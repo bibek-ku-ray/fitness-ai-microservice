@@ -25,3 +25,7 @@ kafka:
         name: activity-events
 server:
   port: 8083
+gemini:
+  api:
+    key: ${GEMINI_API_KEY}
+    url: ${GEMINI_API_URL}
