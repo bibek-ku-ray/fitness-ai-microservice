@@ -1,0 +1,30 @@
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/fitness-mirco-ai
+      database: fitness-mirco-ai
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: activity-processor-group
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      auto-offset-reset: earliest
+      properties:
+        spring.json.use.type.header: false
+        spring.json.value.default.type: com.fitness.aiservice.model.Activity
+        spring.json.type.mapping: com.fitness.activityservice.model.Activity:com.fitness.aiservice.model.Activity
+        spring.json.trusted.packages: "*"
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+kafka:
+  topic:
+    name: activity-events
+server:
+  port: 8083
+gemini:
+  api:
+    key: ${GEMINI_API_KEY}
+    url: ${GEMINI_API_URL}

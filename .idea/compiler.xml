@@ -12,6 +12,13 @@
         </processorPath>
         <module name="userservice" />
       </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.42/8365263844ebb62398e0dc33057ba10ba472d3b8/lombok-1.18.42.jar" />
+        </processorPath>
+        <module name="activityservice.main" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
@@ -22,6 +29,9 @@
       <module name="aiservice" options="-parameters" />
       <module name="aiservice.main" options="-parameters" />
       <module name="aiservice.test" options="-parameters" />
+      <module name="configserver" options="-parameters" />
+      <module name="configserver.main" options="-parameters" />
+      <module name="configserver.test" options="-parameters" />
       <module name="eureka" options="-parameters" />
       <module name="eureka.main" options="-parameters" />
       <module name="eureka.test" options="-parameters" />
