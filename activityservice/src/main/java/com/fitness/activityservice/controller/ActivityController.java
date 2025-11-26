@@ -4,11 +4,9 @@ import com.fitness.activityservice.dto.ActivityRequest;
 import com.fitness.activityservice.dto.ActivityResponse;
 import com.fitness.activityservice.service.ActivityService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/activities")
@@ -16,6 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class ActivityController {
 
     private final ActivityService activityService;
+
+
+    @GetMapping("/health")
+    public ResponseEntity<String> health(){
+        return ResponseEntity.status(HttpStatus.OK).body("activity api healthy");
+    }
 
     @PostMapping()
     ResponseEntity<ActivityResponse> createActivity(@RequestBody ActivityRequest request) {

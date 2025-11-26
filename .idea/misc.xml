@@ -6,6 +6,7 @@
     <file type="web" url="file://$PROJECT_DIR$/aiservice" />
     <file type="web" url="file://$PROJECT_DIR$/configserver" />
     <file type="web" url="file://$PROJECT_DIR$/eureka" />
+    <file type="web" url="file://$PROJECT_DIR$/gateway" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
